@@ -12,6 +12,15 @@ public class Game {
         String name = scanner.nextLine();
 
         // TODO Create Tav instance with user input.
+
+        Tav player = new Tav("Aurora","Bard");
+        player.printCharacterSheet();
+
+        printDramaticText(player.name + " the " + player.role + " ..
+        awakens in the brothel");
+
+
+        System.out.println();
         // TODO Implement generateMonster()
         // TODO Collect buffs from user.
         // TODO Implement roll() method for Tav.
