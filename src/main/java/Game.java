@@ -13,12 +13,17 @@ public class Game {
 
         // TODO Create Tav instance with user input.
 
-        Tav player = new Tav("Aurora","Bard");
+        printDramaticText("You wake up at the Vyx. Who even are you?");
+        
+        Player player = new Player(name);
         player.printCharacterSheet();
 
-        printDramaticText(player.name + " the " + player.role + " ..
-        awakens in the brothel");
+        printDramaticText("Lest is asleep next to you. Wake her up to learn your mission");
+        System.out.println(   );
+        printDramaticText("Roll for charisma");
 
+
+        
 
         System.out.println();
         // TODO Implement generateMonster()

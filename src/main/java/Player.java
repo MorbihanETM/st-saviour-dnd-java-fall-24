@@ -1,8 +1,8 @@
 import java.util.Random;
 
-public class Tav {
+public class Player {
     public String name;
-    public String role;
+    public String job;
     public int level;
     
     public int constitution;
@@ -12,9 +12,9 @@ public class Tav {
     public int wisdom;
     public int intelligence;
 
-    public Tav(String name, String role) {
+    public Player(String name) {
         this.name = name;
-        this.role = role;
+        this.job = "enforcer";
 
         this.level = 1;
         int[] stats = new int[]{15, 14, 13, 12, 10, 8};
@@ -31,7 +31,7 @@ public class Tav {
 
     public void printCharacterSheet() {
         System.out.println("Name: " + this.name);
-        System.out.println("Role: " + this.role);
+        System.out.println("Role: " + this.job);
         System.out.println("Level: " + this.level);
         
         System.out.println("_________________");
