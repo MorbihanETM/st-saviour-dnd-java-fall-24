@@ -22,6 +22,10 @@ public class Game {
         System.out.println(   );
         printDramaticText("Roll for charisma");
 
+        player.roll("advantage");
+
+        
+
 
         
 
