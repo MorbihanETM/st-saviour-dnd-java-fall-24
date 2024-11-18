@@ -22,7 +22,13 @@ public class Game {
         System.out.println(   );
         printDramaticText("Roll for charisma");
 
-        player.roll("advantage");
+        int charisma1 = player.roll("advantage");
+        
+
+        if (charisma1 > 10) {
+
+            
+        }
 
         
 

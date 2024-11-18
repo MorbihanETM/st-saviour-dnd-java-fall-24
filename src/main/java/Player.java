@@ -58,35 +58,19 @@ public class Player {
     }
     public int roll(String buff) {
         Random random = new Random();
-        if(buff.toLowerCase().equals("a")) {
-            // Roll first die
-            int first = random.nextInt(20) + 1;
-            Ascii.drawD20(first);
-
-            int second = random.nextInt(20) + 1;
-            Ascii.drawD20(second);
-
-            
-
-        }
         
         int roll = random.nextInt(20) + 1; 
-        Ascii.drawD20(roll);
-
-        // Generate dice graphic
-        String[] symbols = {"-", "/", "\\", "|"};
-        StringBuilder diceGraphic = new StringBuilder("|");
-        for (int i = 0; i < 20; i++) {
-            diceGraphic.append(symbols[random.nextInt(symbols.length)]);
-        }
-        diceGraphic.append("|");
-        System.out.println("Dice graphic: " + diceGraphic);
+        
 
         if ("advantage".equalsIgnoreCase(buff)) {
             int secondRoll = random.nextInt(20) + 1;
+
+            Ascii.drawD20(roll);
+            Ascii.drawD20(secondRoll);
+    
             System.out.println("Advantage roll! First roll: " + roll + ", Second roll: " + secondRoll);
             roll = Math.max(roll, secondRoll);
-        } else if ("disadvantage".equalsIgnoreCase(buff)) {
+        }  if ("disadvantage".equalsIgnoreCase(buff)) {
             int secondRoll = random.nextInt(20) + 1;
             System.out.println("Disadvantage roll! First roll: " + roll + ", Second roll: " + secondRoll);
             roll = Math.min(roll, secondRoll);
