@@ -18,17 +18,18 @@ public class Game {
         Player player = new Player(name);
         player.printCharacterSheet();
 
-        printDramaticText("Lest is asleep next to you. Wake her up to learn your mission");
+        printDramaticText("Lest is asleep next to you. Wake her up to learn your mission.");
         System.out.println(   );
-        printDramaticText("Roll for charisma");
+        printDramaticText("Roll for charisma with advantage! ");
 
-        int charisma1 = player.roll("advantage");
+        player.roll("advantage");
+
+        printDramaticText("Lest reveals that there are two threats to Piltover:"); 
+        printDramaticText("The Black Rose and the Anomaly.");
+        printDramaticText("Which do you wish to combat?");
         
 
-        if (charisma1 > 10) {
-
-            
-        }
+        
 
         
 
