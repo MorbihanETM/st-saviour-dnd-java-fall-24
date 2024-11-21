@@ -29,10 +29,6 @@ public class Game {
         printDramaticText("2. The Anomaly.");
         printDramaticText("Choose 1 or 2 for combat");
 
-        
-        
-        
-        
         int choice = scanner.nextInt();
         scanner.nextLine();
 
