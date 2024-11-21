@@ -25,8 +25,31 @@ public class Game {
         player.roll("advantage");
 
         printDramaticText("Lest reveals that there are two threats to Piltover:"); 
-        printDramaticText("The Black Rose and the Anomaly.");
-        printDramaticText("Which do you wish to combat?");
+        printDramaticText("1. The Black Rose.");
+        printDramaticText("2. The Anomaly.");
+        printDramaticText("Choose 1 or 2 for combat");
+
+        
+        
+        
+        
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+
+        if (choice == 1) {
+            DecisionTreeStory.blackRoseStory(scanner);
+        } else if (choice == 2) {
+            DecisionTreeStory.anomalyStory(scanner);
+        } else {
+            System.out.println("Invalid choice. The story ends here.");
+        }
+        scanner.close();
+
+        
+        
+
+
+
         
 
         
