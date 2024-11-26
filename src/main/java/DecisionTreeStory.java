@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -26,7 +27,22 @@ import java.util.concurrent.TimeUnit;
         
             return rollRequired;
         }
-        
+
+        private static int generateMonsterAnomaly() {
+            double chance = Math.random(); // Generate a random number between 0.0 and 1.0
+            int rollRequired; // Generates a value between 0.0 and 1.0
+
+            if (chance < 0.5) { // 50% chance
+                System.out.println("A mutant crawler emerges from the shadows! It's fast but weak.");
+                return 5; // Roll required to beat Monster A
+            } else if (chance < 0.8333) { // 33.33% chance
+                System.out.println("An enhanced enforcer bursts through the wall! Strong and relentless.");
+                return 10; // Roll required to beat Monster B
+            } else { // 16.66% chance
+                System.out.println("A towering monstrosity looms above! An experiment gone horribly wrong.");
+                return 15; // Roll required to beat Monster C
+            }
+        }
         
         
         public static void blackRoseStory(Scanner scanner){
@@ -63,8 +79,23 @@ import java.util.concurrent.TimeUnit;
 
         else if (subChoice == 2) {
             printDramaticText("You set a cunning trap for their leader...");
-            printDramaticText("The plan succeeds, and you face the leader in an intense duel!");
-            // Add more story progression here
+            printDramaticText("Suddenly, a figure appears before you!");
+            
+            int rollRequired = generateMonsterBlackRose();
+            printDramaticText("You need to roll at least " + rollRequired + " to defeat this enemy.");
+
+            printDramaticText("Press Enter to roll the dice...");
+            scanner.nextLine();
+            int playerRoll = (int) (Math.random() * 20) + 1; // Roll a 20-sided die
+            printDramaticText("You rolled a " + playerRoll + "!");
+            
+                if (playerRoll >= rollRequired) {
+                    printDramaticText("The plan succeeds, and you face the leader in an intense duel!");
+                    printDramaticText("After moments of violent battle, you defeat The Black Rose!");
+                } else {
+                    printDramaticText("The enemy overpowers you... The story ends here.");
+                }
+            
         } else {
             System.out.println("Invalid choice. The Black Rose overwhelms you. The story ends.");
         }
@@ -82,12 +113,41 @@ import java.util.concurrent.TimeUnit;
         
         if (subChoice == 1) {
             System.out.println("You delve into dusty tomes, uncovering forbidden knowledge...");
-            System.out.println("The research takes a toll on your sanity, but you gain valuable insights.");
-            // Add more story progression here
+            
+
+            int rollRequired = generateMonsterAnomaly();
+            printDramaticText("You need to roll at least " + rollRequired + " to defeat this enemy.");
+            
+            printDramaticText("Press Enter to roll the dice...");
+            scanner.nextLine();
+            
+            int playerRoll = (int) (Math.random() * 20) + 1; // Roll a 20-sided die
+            printDramaticText("You rolled a " + playerRoll + "!");
+            
+                if (playerRoll >= rollRequired) {
+                    printDramaticText("You have defeated the enemy!");
+                    System.out.println("The research takes a toll on your sanity, but you gain valuable insights.");
+                } else {
+                    printDramaticText("After a long struggle, the enemy overpowers you... The story ends here.");
+                }
         } else if (subChoice == 2) {
             System.out.println("You step into the anomaly's lair, where reality bends and twists...");
-            System.out.println("The anomaly manifests as a shadowy figure, and you prepare for battle.");
-            // Add more story progression here
+            
+            int rollRequired = generateMonsterAnomaly();
+            printDramaticText("You need to roll at least " + rollRequired + " to defeat this enemy.");
+            
+            printDramaticText("Press Enter to roll the dice...");
+            scanner.nextLine();
+            
+            int playerRoll = (int) (Math.random() * 20) + 1; // Roll a 20-sided die
+            printDramaticText("You rolled a " + playerRoll + "!");
+            
+                if (playerRoll >= rollRequired) {
+                    printDramaticText("You have defeated the enemy!");
+                    System.out.println("Having uncovered these creatured has changed you forever. Good luck though!");
+                } else {
+                    printDramaticText("After a long struggle, the enemy overpowers you... The story ends here.");
+                }
         } else {
             System.out.println("Invalid choice. The anomaly consumes you. The story ends.");
         }
