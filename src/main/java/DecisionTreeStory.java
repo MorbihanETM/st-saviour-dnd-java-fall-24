@@ -3,6 +3,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
     public class DecisionTreeStory {
+
         
         private static int generateMonsterBlackRose() {
             double randomValue = Math.random(); // Generate a random number between 0.0 and 1.0
@@ -30,7 +31,6 @@ import java.util.concurrent.TimeUnit;
 
         private static int generateMonsterAnomaly() {
             double chance = Math.random(); // Generate a random number between 0.0 and 1.0
-            int rollRequired; // Generates a value between 0.0 and 1.0
 
             if (chance < 0.5) { // 50% chance
                 System.out.println("A mutant crawler emerges from the shadows! It's fast but weak.");
@@ -63,6 +63,9 @@ import java.util.concurrent.TimeUnit;
             
             int rollRequired = generateMonsterBlackRose();
             printDramaticText("You need to roll at least " + rollRequired + " to defeat this enemy.");
+
+            printDramaticText("Do you want to add a buff? (Enter 'advantage', 'guidance', or 'none')");
+            String buff = scanner.nextLine().toLowerCase();
 
             printDramaticText("Press Enter to roll the dice...");
             scanner.nextLine();
@@ -153,6 +156,27 @@ import java.util.concurrent.TimeUnit;
         }
     }
 
+    private Random random = new Random();
+    
+    public int roll(String buff) {
+        int d20Roll1 = random.nextInt(20) + 1;
+
+        switch (buff) {
+            case "advantage":
+                int d20Roll2 = random.nextInt(20) + 1;
+                System.out.println("Rolls: " + d20Roll1 + ", " + d20Roll2);
+                return Math.max(d20Roll1, d20Roll2); // Return the higher of the two rolls
+
+            case "guidance":
+                int d4Roll = random.nextInt(4) + 1;
+                System.out.println("Rolls: " + d20Roll1 + " (d20), " + d4Roll + " (d4)");
+                return d20Roll1 + d4Roll; // Add d4 roll to d20 roll
+
+            default:
+                System.out.println("Roll: " + d20Roll1);
+                return d20Roll1; // No buff, return a single d20 roll
+        }
+    }
 
     public static void printDramaticText(String text) {
         // Delay in milliseconds
