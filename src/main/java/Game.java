@@ -7,15 +7,25 @@ public class Game {
         // Create Scanner for collecting user input.
         Scanner scanner = new Scanner(System.in);
 
-        // Collect character name from user.
-        System.out.print("Name: ");
-        String name = scanner.nextLine();
+    
+        
 
+        printDramaticText("Choose one of the following roles for your adventure:");
+        printDramaticText("1. Enforcer");
+        printDramaticText("2. Inventor");
+
+        System.out.println(" ");
+
+        String job = scanner.nextLine();
         // TODO Create Tav instance with user input.
 
-        printDramaticText("You wake up at the Vyx. Who even are you?");
         
-        Player player = new Player(name);
+        printDramaticText("You wake up at the Vyx, a known harem on the outskirts of Zaun. Who even are you?");
+
+        System.out.print("Name: ");
+        String name = scanner.nextLine();
+        
+        Player player = new Player(name, job);
         player.printCharacterSheet();
 
         Ascii.titlescreen();
@@ -23,7 +33,9 @@ public class Game {
         printDramaticText("Press Enter to begin the story...");
         scanner.nextLine();
 
-        printDramaticText("Lest is asleep next to you. Wake her up to learn your mission.");
+        printDramaticText("Lest is asleep next to you. She's been distracted lately.");
+        printDramaticText("Since the council had been attacked Piltover and Zaun have reached levels tension they had never experienced before.");
+        printDramaticText("But you know that Lest hears all...  Wake her up to learn your mission.");
         System.out.println(   );
         printDramaticText("Roll for charisma");
         
@@ -35,7 +47,7 @@ public class Game {
 
         // player.roll("advantage");
 
-        printDramaticText("Lest reveals that there are two threats to Piltover:"); 
+        printDramaticText("Lest reveals that there are two imminent threats to the sanctity of our twin cities:"); 
         printDramaticText("1. The Black Rose.");
         printDramaticText("2. The Anomaly.");
         printDramaticText("Choose 1 or 2 for combat");

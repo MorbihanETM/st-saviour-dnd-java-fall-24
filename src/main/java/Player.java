@@ -15,9 +15,9 @@ public class Player {
     public int wisdom;
     public int intelligence;
 
-    public Player(String name) {
+    public Player(String name, String job) {
         this.name = name;
-        this.job = "enforcer";
+        this.job = job;
 
         this.level = 1;
         int[] stats = new int[]{15, 14, 13, 12, 10, 8};

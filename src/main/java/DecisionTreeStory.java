@@ -90,12 +90,12 @@ import java.util.concurrent.TimeUnit;
             printDramaticText("Choose a buff (advantage/guidance/none): ");
             String buff = scanner.nextLine();
             
-            Player player = new Player("example");
+            Player player = new Player("example", "example");
             int result = player.roll(buff);
             printDramaticText("Final roll result: " + result);
             
                 if (result == 20) {
-                    printDramaticText("CRITICAL SUCCESS. You have defeated the enemy!");
+                    printDramaticText("CRITICAL SUCCESS. The guild's masterful deciet proved no match for your strength!");
                     printDramaticText("Coming home from this military victory, you realize some brigands are following you.");
                     printDramaticText("What will you do?");
                     System.out.println("1. Beat them up.");
@@ -106,7 +106,7 @@ import java.util.concurrent.TimeUnit;
                     scanner.nextLine();
                     
                     if (subChoicebis == 1) {
-                        printDramaticText("You turn around to uncover your assailant with a valiant look in your eye.");
+                        printDramaticText("You turn around to uncover your assailant with a valiant look in your eyes.");
 
                         int rollRequiredBrigand = generateMonsterBrigand(); 
                         printDramaticText("You need to roll at least " + rollRequiredBrigand + " to defeat this enemy.");
@@ -172,11 +172,11 @@ import java.util.concurrent.TimeUnit;
                     }
 
                 } else if (result == 1) {
-                    printDramaticText("CRITICAL FAILURE. The enemy immediately strikes you down with one fateful blow. You never stood a chance...");
-                    printDramaticText("You die in agonizing circumstances!");
+                    printDramaticText("CRITICAL FAILURE. You immediately feel yourself being swallowed by the guilds' deathly grasp. You never stood a chance...");
+                    printDramaticText("Your life will have meanth nothing.");
                     Ascii.GameOver();
                 } else if (result >= rollRequired) {
-                    printDramaticText("Success!");
+                    printDramaticText("Success! The guild's masterful deciet proved no match for your strength!");
                     printDramaticText("Coming home from this military victory, you realize some brigands are following you.");
                     printDramaticText("What will you do?");
                     System.out.println("1. Beat them up.");
@@ -252,7 +252,8 @@ import java.util.concurrent.TimeUnit;
 
                     }
                 } else {
-                    printDramaticText("After a long, but ultimately decisive brawl, the enemy overpowers you. Better luck next time!");
+                    printDramaticText("After a long, but ultimately decisive brawl, the Mages' powers become too great.");
+                    printDramaticText("You feel yourself being engulfed by the red and black thorns of your inevitable demise.");
                     Ascii.GameOver();
                 }
     
@@ -268,12 +269,12 @@ import java.util.concurrent.TimeUnit;
             printDramaticText("Choose a buff (advantage/guidance/none): ");
             String buff = scanner.nextLine();
             
-            Player player = new Player("example");
+            Player player = new Player("example", "example");
             int result = player.roll(buff);
             printDramaticText("Final roll result: " + result);
             
                 if (result == 20) {
-                    printDramaticText("CRITICAL SUCCESS. You have defeated the enemy!");
+                    printDramaticText("CRITICAL SUCCESS. Your masterful warfare is of no match to the red thorns of this guild!");
                     printDramaticText("Coming home from this military victory, you realize some brigands are following you.");
                     printDramaticText("What will you do?");
                     System.out.println("1. Beat them up.");
@@ -349,11 +350,11 @@ import java.util.concurrent.TimeUnit;
 
                     }
                 } else if (result == 1){
-                    printDramaticText("CRITICAL FAILURE. The enemy immediately strikes you down with one fateful blow. You never stood a chance...");
-                    printDramaticText("You die in agonizing circumstances!");
+                    printDramaticText("CRITICAL FAILURE. You immediately feel yourself being swallowed by the guilds' deathly grasp. You never stood a chance...");
+                    printDramaticText("Your life will have meanth nothing.");
                     Ascii.GameOver();
                 } else if (result >= rollRequired) {
-                    printDramaticText("Success!");
+                    printDramaticText("Success! In the end, though not without struggle, you find yourelf putting an end to the guild's terror.");
                     printDramaticText("Coming home from this military victory, you realize some brigands are following you.");
                     printDramaticText("What will you do?");
                     System.out.println("1. Beat them up.");
@@ -429,7 +430,7 @@ import java.util.concurrent.TimeUnit;
 
                     }
                 } else {
-                    printDramaticText("After a long, but ultimately decisive brawl, the enemy overpowers you. Better luck next time!");
+                    printDramaticText("After a long, but ultimately decisive brawl, the powerful mage takes you into their thorny arms, for good. Better luck next time!");
                     Ascii.GameOver();
                 }
                     
@@ -463,7 +464,7 @@ import java.util.concurrent.TimeUnit;
             printDramaticText("Choose a buff (advantage/guidance/none): ");
             String buff = scanner.nextLine();
             
-            Player player = new Player("example");
+            Player player = new Player("example","example");
             int result = player.roll(buff);
             printDramaticText("Final roll result: " + result);
 
@@ -637,7 +638,7 @@ import java.util.concurrent.TimeUnit;
             printDramaticText("Choose a buff (advantage/guidance/none): ");
             String buff = scanner.nextLine();
             
-            Player player = new Player("example");
+            Player player = new Player("example", "example");
             int result = player.roll(buff);
             printDramaticText("Final roll result: " + result);
 
