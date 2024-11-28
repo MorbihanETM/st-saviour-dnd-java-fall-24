@@ -1,6 +1,9 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class Player {
+
+
     public String name;
     public String job;
     public int level;
@@ -57,28 +60,36 @@ public class Player {
         }
     }
     public int roll(String buff) {
-        Random random = new Random();
         
-        int roll = random.nextInt(20) + 1; 
-        
+        int d20Roll = rollD20();
 
-        if ("advantage".equalsIgnoreCase(buff)) {
-            int secondRoll = random.nextInt(20) + 1;
+        switch (buff.toLowerCase()) {
+            case "advantage":
+                int secondD20Roll = rollD20();
+                System.out.println("First d20 roll: " + d20Roll);
+                System.out.println("Second d20 roll: " + secondD20Roll);
+                return Math.max(d20Roll, secondD20Roll);
 
-            Ascii.drawD20(roll);
-            Ascii.drawD20(secondRoll);
-    
-            System.out.println("Advantage roll! First roll: " + roll + ", Second roll: " + secondRoll);
-            roll = Math.max(roll, secondRoll);
-        }  if ("disadvantage".equalsIgnoreCase(buff)) {
-            int secondRoll = random.nextInt(20) + 1;
-            System.out.println("Disadvantage roll! First roll: " + roll + ", Second roll: " + secondRoll);
-            roll = Math.min(roll, secondRoll);
+            case "guidance":
+                int d4Roll = rollD4();
+                System.out.println("d20 roll: " + d20Roll);
+                System.out.println("d4 roll: " + d4Roll);
+                return d20Roll + d4Roll;
+
+            default:
+                System.out.println("d20 roll: " + d20Roll);
+                return d20Roll;
         }
+    }
 
-        // Print final result
-        System.out.println("Final roll: 🎲 " + roll);
-        return roll;
+    public int rollD20() {
+        return (int) (Math.random() * 20) + 1;
+    }
+    
+        // Roll a d4
+    public int rollD4() {
+        return (int) (Math.random() * 4) + 1;
     }
 }
+
  

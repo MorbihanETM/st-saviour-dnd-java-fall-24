@@ -20,9 +20,15 @@ public class Game {
 
         printDramaticText("Lest is asleep next to you. Wake her up to learn your mission.");
         System.out.println(   );
-        printDramaticText("Roll for charisma with advantage! ");
+        printDramaticText("Roll for charisma");
+        
+        
+        printDramaticText("Choose a buff (advantage/guidance/none): ");
+        String buff = scanner.nextLine();
+        int result = player.roll(buff);
+        printDramaticText("Final roll result: " + result);
 
-        player.roll("advantage");
+        // player.roll("advantage");
 
         printDramaticText("Lest reveals that there are two threats to Piltover:"); 
         printDramaticText("1. The Black Rose.");
