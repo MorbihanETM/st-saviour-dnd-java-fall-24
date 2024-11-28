@@ -12,6 +12,61 @@ public class Game {
         String name = scanner.nextLine();
 
         // TODO Create Tav instance with user input.
+
+        printDramaticText("You wake up at the Vyx. Who even are you?");
+        
+        Player player = new Player(name);
+        player.printCharacterSheet();
+
+        Ascii.titlescreen();
+
+        printDramaticText("Press Enter to begin the story...");
+        scanner.nextLine();
+
+        printDramaticText("Lest is asleep next to you. Wake her up to learn your mission.");
+        System.out.println(   );
+        printDramaticText("Roll for charisma");
+        
+        
+        printDramaticText("Choose a buff (advantage/guidance/none): ");
+        String buff = scanner.nextLine();
+        int result = player.roll(buff);
+        printDramaticText("Final roll result: " + result);
+
+        // player.roll("advantage");
+
+        printDramaticText("Lest reveals that there are two threats to Piltover:"); 
+        printDramaticText("1. The Black Rose.");
+        printDramaticText("2. The Anomaly.");
+        printDramaticText("Choose 1 or 2 for combat");
+
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+
+        if (choice == 1) {
+            DecisionTreeStory.blackRoseStory(scanner);
+        } else if (choice == 2) {
+            DecisionTreeStory.anomalyStory(scanner);
+        } else {
+            System.out.println("Invalid choice. The story ends here.");
+        }
+        scanner.close();
+
+        
+        
+
+
+
+        
+
+        
+
+        
+
+
+        
+
+        System.out.println();
         // TODO Implement generateMonster()
         // TODO Collect buffs from user.
         // TODO Implement roll() method for Tav.
