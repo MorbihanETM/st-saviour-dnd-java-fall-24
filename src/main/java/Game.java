@@ -18,6 +18,11 @@ public class Game {
         Player player = new Player(name);
         player.printCharacterSheet();
 
+        Ascii.titlescreen();
+
+        printDramaticText("Press Enter to begin the story...");
+        scanner.nextLine();
+
         printDramaticText("Lest is asleep next to you. Wake her up to learn your mission.");
         System.out.println(   );
         printDramaticText("Roll for charisma");
